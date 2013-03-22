@@ -11,13 +11,13 @@
 static char *ngx_http_out(ngx_conf_t * cf,ngx_command_t * cmd,void * conf);
 /*命令集数组*/
 static ngx_command_t ngx_http_out_command[] = {
-  { ngx_string("out"),
-	  NGX_HTTP_LOC_CONF | NGX_CONF_NOARGS,
-	  ngx_http_out, /*注册函数*/
-	  0,/*没有offset, 只支持一个context*/
-	  0, /*没有offset, 只有配置结构体存在的时候，才会用到*/
-	  NULL},
-	 ngx_null_command 
+	{ ngx_string("out"),
+	 NGX_HTTP_LOC_CONF | NGX_CONF_NOARGS,
+	 ngx_http_out, /*注册函数*/
+	 0,/*没有offset, 只支持一个context*/
+	 0, /*没有offset, 只有配置结构体存在的时候，才会用到*/
+	 NULL},
+	ngx_null_command 
 };
 
 /*out字符串*/
@@ -25,14 +25,14 @@ static u_char ngx_out[] = OUT;
 
 /*上下文结构体*/
 static ngx_http_module_t ngx_http_out_module_ctx = {
-		NULL,		/*preconfiguration-------------*/
-		NULL,		/*postconfiguration------------*/
-		NULL,		/*create main configuration----*/
-		NULL,		/*init-------------------------*/
-		NULL,		/*create server configuration--*/
-		NULL,		/*merge------------------------*/
-		NULL,		/*create location configuration*/
-		NULL		/*merge------------------------*/
+	NULL,		/*preconfiguration-------------*/
+	NULL,		/*postconfiguration------------*/
+	NULL,		/*create main configuration----*/
+	NULL,		/*init-------------------------*/
+	NULL,		/*create server configuration--*/
+	NULL,		/*merge------------------------*/
+	NULL,		/*create location configuration*/
+	NULL		/*merge------------------------*/
 };
 
 /*模块结构体，注:模块结构体不能设置为static*/
